@@ -10,6 +10,46 @@
   </head>
 
   <body>
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <p class="navbar-item">
+          <%= link_to 'Private Event Home', class:"button is-info" %>
+        </p>
+
+        <a class="navbar-item">
+          Documentation
+        </a>
+
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <p>
+              <%= link_to "Sign up", new_user_registration_path, class: "button is-primary" %>
+            </p>
+            <p>
+              <%= link_to 'Sign in', new_user_session_path, class: "button is-warning" %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+    <% if flash[:notice] %>
+      <p class="notice"> <%= notice %> </p>
+    <% end %>
+    <% if flash[:alert] %>
+      <p class="alert"> <%= notice %> </p>
+    <% end %>
+
+
+
+
     <%= yield %>
   </body>
 </html>
