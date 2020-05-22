@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
     if @user.save
 
-      flash.notice = "Account Succefully created!"
+      flash.notice = "Account Successfully created!"
       redirect_to @user
     else
       render :new
