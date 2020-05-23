@@ -1,0 +1,29 @@
+<div class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-4">
+
+        <% if user_signed_in? %>
+        <h1 class="title is-4"> Welcome! <%= current_user.name.capitalize! %> </h1>
+        <% else %>
+        <h1 class="title is-4"> Project: Private Events</h1>
+        <% end %>
+
+        <div class="proj-div">
+          <p class="proj-desc">
+
+            A project which allows users to create events and then manage user signups. Users can create events and send
+            <br /> invitations and parties. Events take place at a specific date and at location (which you can just store as a string,
+            <br /> like “Andy’s House”).
+
+            A user can create events. A user can attend many events. An event can be attended by many users. This will require you to
+            <br /> model many-to-many relationships and also to be very conscious about your foreign keys and class names -- <br />
+            (hint: you won’t be able to just rely on Rails’ defaults).
+          </p>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>

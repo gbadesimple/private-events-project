@@ -11,12 +11,12 @@
 
   <body>
 
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <nav class="navbar" >
 
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
         <p class="navbar-item">
-          <%= link_to 'Event Homepage', class:"button is-info" %>
+          <%= link_to 'Event Homepage', root_path, class:"button is-info" %>
         </p>
 
         <a class="navbar-item">
@@ -27,12 +27,26 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
+
+<!-- signed in current user -->
+      <% if user_signed_in? %>
+      <p>
+        <%= link_to current_user.name.capitalize, edit_user_registration_path, class: "button is-primary" %>
+      </p>
+      <p>
+        <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "button is-warning" %>
+      </p>
+
+      <% else %>
             <p>
               <%= link_to "Sign up", new_user_registration_path, class: "button is-primary" %>
             </p>
             <p>
-              <%= link_to 'Sign in', new_user_session_path, class: "button is-warning" %>
+              <%= link_to 'Log in', new_user_session_path, class: "button is-warning" %>
             </p>
+      <% end %>
+
+
           </div>
         </div>
       </div>
@@ -41,10 +55,15 @@
 
 
     <% if flash[:notice] %>
-      <p class="notice"> <%= notice %> </p>
+      <div class="notification is-primary global-notification">
+        <p class="notice"> <%= notice %> </p>
+      </div>
     <% end %>
+
     <% if flash[:alert] %>
-      <p class="alert"> <%= notice %> </p>
+      <div class="notification is-danger global-notification">
+        <p class="alert"> <%= alert %> </p>
+      </div>
     <% end %>
 
 
