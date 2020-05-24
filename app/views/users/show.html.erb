@@ -6,32 +6,22 @@
         <h1 class="title is-4"> My Events </h1>
 
 
-        <div class="field">
-          <div class="control">
-
+        <div class="event-list">
+          <% current_user.events.each do |event|  %>
             <p>
-            <strong> Name: </strong>
-            <%= @user.name %><br />
-            <strong> Email: </strong>
-            <%= @user.email %>
+            <Strong> Event: </strong>
+              <%= event.name %>
+              <%= link_to "Show", event_path %>
             </p>
 
-            <br />
+          <hr>
+          <% end %>
 
-        <div class="event-list">
-              <% current_user.events.each do |event|  %>
-              <p>
-              <Strong> Event: </strong>
-              <%= event.name %>
-              </p>
-              <% end %>
         </div>
 
         <p>
           <%= link_to "back", root_path, class:"button is-danger" %>
         </p>
-          </div>
-        </div>
 
 
       </div>

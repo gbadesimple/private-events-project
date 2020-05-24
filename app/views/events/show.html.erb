@@ -5,10 +5,24 @@
 
         <h1 class="title is-4"> Event created </h1>
 
-          <strong> Name: </strong>
-          <%= @event.name %>
-
+          <strong> Event: </strong>
+          <p>
+            <%= @event.name %>
+          </p>
           <br />
+
+          <strong> Event Creator </strong>
+          <p>
+            <%= current_user.name %>
+          </p>
+          <br />
+
+          <strong> Description: </strong>
+          <p>
+            <%= @event.description %>
+          </p>
+          <br />
+
           <strong> Date: </strong>
           <%= @event.date %>
 
@@ -16,6 +30,8 @@
           <div class="field">
             <p>
             <%= link_to "List of all events ", events_path, class:"button" %>
+            <%= link_to "create new event", new_event_path, class:"button is-danger" %>
+            <%= link_to "Back", root_path, class:"button is-info" %>
             </P>
           </div>
 
