@@ -9,7 +9,7 @@
         <h1 class="title is-4"> Project: Private Events</h1>
         <% end %>
 
-        <div class="proj-div">
+        <div>
           <p class="proj-desc">
 
             A project which allows users to create events and then manage user signups. Users can create events and send
@@ -21,7 +21,16 @@
             (hint: you won’t be able to just rely on Rails’ defaults).
           </p>
         </div>
+        <br />
 
+        <% if user_signed_in? %>
+
+          <p>
+            <%= link_to "Create Event", new_event_path, class:"button is-info" %>
+            <%= link_to "My Events >>", user_path(current_user[:id] ), class:"button"  %>
+            <%= link_to "All Events", events_path, class:"button is-primary" %>
+          </p>
+          <% end %>
 
       </div>
     </div>

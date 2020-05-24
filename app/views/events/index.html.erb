@@ -1,0 +1,28 @@
+<div class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-4">
+
+        <h1 class="title"> List of all created Events </h1>
+
+        <%= simple_form_for current_user do %>
+          <% @events.select do |event| %>
+          <p>
+            <strong> Event: </strong><br />
+            <%= event.name %>
+          </p>
+          <% end %>
+        <% end %>
+
+        <br />
+        <div class="field">
+          <div class="control">
+            <%= link_to "back", root_path, class:"button is-danger" %>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>

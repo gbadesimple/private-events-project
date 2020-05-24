@@ -1,0 +1,25 @@
+<div class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-4">
+
+        <h1 class="title is-4"> Event created </h1>
+
+          <strong> Name: </strong>
+          <%= @event.name %>
+
+          <br />
+          <strong> Date: </strong>
+          <%= @event.date %>
+
+
+          <div class="field">
+            <p>
+            <%= link_to "List of all events ", events_path, class:"button" %>
+            </P>
+          </div>
+
+      </div>
+    </div>
+  </div>
+</div>
