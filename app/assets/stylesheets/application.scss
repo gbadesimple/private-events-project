@@ -28,11 +28,25 @@ body {
   color: whitesmoke;
 }
 .proj-desc {
-  color: whitesmoke;
+  color: #827839;
   padding: inherit;
   font-size: 23px;
   font-family: cursive;
 }
-.proj-div {
-  background-color: #463E41;
+.button {
+  background-color: #307D7E;
+  color: ghostwhite;
+  border-radius: 10%;
+  border-color: #571B7e;
+}
+.button:hover {
+  background-color: #817339;
+  color: #FBB917;
+}
+
+.title {
+  color: #736AFF;
+}
+.event-list {
+  color: #7D2252;
 }
