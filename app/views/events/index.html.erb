@@ -8,17 +8,26 @@
         <%= simple_form_for current_user do %>
           <% @events.select do |event| %>
           <p>
-            <strong> Event: </strong><br />
+            <strong> Event: </strong>
             <%= event.name %>
             </p>
 
             <p>
-            <strong> Description </strong>
+            <strong> Description: </strong>
             <%= event.description %>
           </p>
 
+          <p>
+            <strong> Location: </strong>
+            <%= event.location %>
+          </p>
+          <p>
+            <strong> Created by: </strong>
+            <%= event.creator.name %>
+          </p>
+
           <hr>
-          
+
           <% end %>
         <% end %>
 
