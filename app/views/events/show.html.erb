@@ -36,16 +36,7 @@
 
 <hr>
 
-
-
-
-          <h1 class="title is-4"> List of all attendees </h1>
-          <p>
-            <% @event.attendees.each do |attendee| %>
-            <%= attendee.name %><br />
-            <% end %>
-          </p>
-
+          <%= render "attendees" %>
 
           <div class="field">
             <p>

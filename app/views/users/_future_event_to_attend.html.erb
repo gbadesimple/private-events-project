@@ -1,0 +1,7 @@
+<h1 class="title is-4"> Upcoming Events to attend </h1>
+
+<ul>
+  <% @upcoming_events.each do |event| %>
+  <li> <%= link_to event.name, event_path(event[:id]), class:"prev-title" %> </li>
+  <% end %>
+</ul>

@@ -1,0 +1,7 @@
+<h1 class="title is-4"> Previously Attended Events  </h1>
+
+<ul>
+  <% @prev_events.each do |event| %>
+  <li> <%= link_to event.name, event_path(event[:id]), class:"prev-title" %> </li>
+  <% end %>
+</ul>

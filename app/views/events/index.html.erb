@@ -3,32 +3,13 @@
     <div class="columns is-centered">
       <div class="column is-4">
 
-        <h1 class="title"> List of all created Events </h1>
+        <h1 class="title"> List of all created Events </h1><br />
 
-        <%= simple_form_for current_user do %>
-          <% @events.select do |event| %>
-          <p>
-            <strong> Event: </strong>
-            <%= event.name %>
-            </p>
+        <%= render "upcoming" %>
 
-            <p>
-            <strong> Description: </strong>
-            <%= event.description %>
-          </p>
+        <br />
 
-          <p>
-            <strong> Location: </strong>
-            <%= event.location %>
-          </p>
-          <p>
-            <strong> Created by: </strong>
-            <%= event.creator.name %>
-          </p>
-          <hr>
-
-          <% end %>
-        <% end %>
+        <%= render "past" %>
 
         <br />
         <div class="field">

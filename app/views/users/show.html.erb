@@ -3,33 +3,15 @@
     <div class="columns is-centered">
       <div class="column is-4">
 
-        <h1 class="title is-4"> My Events </h1>
+        <%= render "previously" %>
 
+        <br />
 
-        <div class="event-list">
-          <br />
-          <% @user.events.select do |event|  %>
-            <p>
-            <Strong> Event: </strong>
-              <%= event.name %>
-              <br />
+        <%= render "future_event_to_attend" %>
+        <br />
 
-            <strong> Description: </strong>
-              <%= event.description %>
-              <br />
+        <%= render "my_events" %>
 
-            <strong> Location: </strong>
-              <%= event.location %>
-              <br />
-
-              <%= link_to "Show", event_path(event[:id]) %>
-
-            </p>
-
-          <hr>
-          <% end %>
-
-        </div>
 
         <p>
           <%= link_to "back", root_path, class:"button is-danger" %>
