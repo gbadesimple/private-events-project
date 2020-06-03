@@ -10,6 +10,9 @@ class User < ApplicationRecord
   has_many :attendances, :foreign_key => "attendee_id", dependent: :destroy
   has_many :attended_events, :through => "attendances"
 
+  has_many :invitations, :foreign_key => "invited_event_id", dependent: :destroy
+  has_many :invited_events, :through => "invitations"
+
 # these are used in the UsersController
   def upcoming_events
     self.attended_events.where("events.date > ?", Time.current)

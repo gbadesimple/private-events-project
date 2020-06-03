@@ -1,24 +1,24 @@
-<div class="section">
+<section class="section">
   <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-4">
+    <div class="columns is-mobile">
+      
+      <div class="column">
 
-        <%= render "previously" %>
-
-        <br />
-
-        <%= render "future_event_to_attend" %>
-        <br />
-
-        <%= render "my_events" %>
+          <%= render "previously" %>
 
 
-        <p>
-          <%= link_to "back", root_path, class:"button is-danger" %>
-        </p>
+          <%= render "future_event_to_attend" %>
+      </div>
 
+      <div class="column">
+          <%= render "my_events" %>
+
+
+          <p>
+            <%= link_to "back", root_path, class:"button is-danger" %>
+          </p>
 
       </div>
     </div>
   </div>
-</div>
+</section>

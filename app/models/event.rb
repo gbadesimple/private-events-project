@@ -9,6 +9,10 @@ class Event < ApplicationRecord
   has_many :attendances, :foreign_key => "attended_event_id", dependent: :destroy
   has_many :attendees, :through => "attendances", :source => "attendee"
 
+  has_many :invitations, :foreign_key => "event_invitee_id", dependent: :destroy
+  has_many :event_invitees, :through => "invitations", :source => "event_invitee"
+
+
 =begin
   def self.past
     where("date < ?", Time.current).order(date: :DESC)
