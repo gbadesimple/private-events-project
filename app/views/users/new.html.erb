@@ -4,7 +4,7 @@
       <div class="column is-4">
 
         <% if user_signed_in? %>
-        <h1 class="title is-4"> Welcome! <%= @user.name %> </h1>
+        <h1 class="title is-4"> Welcome <%= current_user.name %>. </h1>
         <% else %>
         <h1 class="title is-4"> Project: Private Events</h1>
         <% end %>
@@ -19,7 +19,15 @@
             A user can create events. A user can attend many events. An event can be attended by many users. This will require you to
             <br /> model many-to-many relationships and also to be very conscious about your foreign keys and class names -- <br />
             (hint: you won’t be able to just rely on Rails’ defaults).
-          </p>
+
+          <% if user_signed_in? %>
+
+          <% else %>
+            <br /><br />
+            To proceed please <%= link_to "signup", new_user_registration_path %> or <%= link_to "login", new_user_session_path %>.
+          <% end %>
+
+          </P>
         </div>
         <br />
 
